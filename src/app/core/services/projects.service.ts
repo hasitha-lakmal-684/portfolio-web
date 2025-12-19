@@ -35,7 +35,7 @@ export class ProjectsService {
   getAll(): Project[] {
     return this.projects;
   }
-  
+
   getById(id: string): Project | undefined {
     return this.projects.find(project => project.id === id);
   }
