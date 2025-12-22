@@ -1,1 +1,32 @@
-<p>project-details works!</p>
+<ng-container *ngIf="project; else notFound">
+  <mat-card>
+    <mat-card-title>
+      {{ project.title }}
+    </mat-card-title>
+    <mat-card-content>
+      <p>Problem:</p>
+      <p>{{ project.problem }}</p>
+
+      <p><strong>Tech Stack:</strong></p>
+      <ul>
+        <li *ngFor="let tech of project.techStack">
+          {{ tech }}
+        </li>
+      </ul>
+    </mat-card-content>
+    <mat-card-actions>
+      <a mat-button color="primary" [href]="project.repoUrl" target="_blank">
+        View on GitHub
+      </a>
+      <a mat-button routerLink="/projects">
+        Back to Projects
+      </a>
+    </mat-card-actions>
+  </mat-card>
+
+</ng-container>
+
+<ng-template #notFound>
+  <p>Project not found</p>
+  <a mat-button routerLink="/projects">Back to projects</a>
+</ng-template>
