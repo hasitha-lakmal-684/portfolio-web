@@ -1,5 +1,5 @@
 [build]
-  command = "npx ng build"
+  command = "npm ci && ./node_modules/.bin/ng build"
   publish = "dist/portfolio-web"
 
 [[redirects]]
